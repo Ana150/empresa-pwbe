@@ -27,6 +27,7 @@ input{
 table{
     margin-top: 20px;
     width: 1600px;
+    text-align: center;
 }
 
 button{
