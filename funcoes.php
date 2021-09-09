@@ -8,22 +8,32 @@ function lerArquivo($nomeArquivo){
     return $jsonArray;
 }
 
-function buscarFuncionario($funcionarios, $first_name){
-    $funcionariosFiltro = [];
+    function buscarFuncionario($funcionarios, $first_name){
 
-    foreach ($funcionarios as $funcionario){
-        if($funcionario->first_name == $first_name){
-            $funcionariosFiltro[] = $funcionario;
+        $funcionariosFiltro = [];
+    
+        foreach($funcionarios as $funcionario){
+            if(
+                strpos($funcionario->first_name, $first_name) !== false
+                || 
+                strpos($funcionario->last_name, $first_name) !== false
+                ||
+                strpos($funcionario->department, $first_name) !== false
+            ){
+                $funcionariosFiltro[] = $funcionario;
+            }
         }
+    
+        return $funcionariosFiltro;
+    
     }
-    return $funcionariosFiltro;
-}
 
-function strpos_arr($haystack, $needle) {
-    if( !is_array($needle) ) $needle = array($needle);
-    $min = false;
-    foreach($needle as $what) 
-        if( ($pos = strpos($haystack, $what)) !== false && ($min == false || $pos < $min) ) 
-            $min = $pos;
-    return $min;
-}
+    function adicionarFuncionario($novoFuncionario){
+        $funcionarios = lerArquivo($nomeArquivo);
+
+        $funcionarios[] = $novoFuncionario;
+
+        $json = json_encode($funcionarios);
+
+        file_put_contents($nomeArquivo, $json);
+    }
