@@ -18,3 +18,12 @@ function buscarFuncionario($funcionarios, $first_name){
     }
     return $funcionariosFiltro;
 }
+
+function strpos_arr($haystack, $needle) {
+    if( !is_array($needle) ) $needle = array($needle);
+    $min = false;
+    foreach($needle as $what) 
+        if( ($pos = strpos($haystack, $what)) !== false && ($min == false || $pos < $min) ) 
+            $min = $pos;
+    return $min;
+}

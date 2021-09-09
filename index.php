@@ -5,6 +5,9 @@ $funcionarios = lerArquivo("./funcionarios.json");
 if(isset($_GET["buscarFuncionario"])){
     $funcionarios = buscarFuncionario($funcionarios, $_GET["buscarFuncionario"]);
 }
+
+strpos($,);
+
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +21,17 @@ if(isset($_GET["buscarFuncionario"])){
 </head>
 <body>
     <h1>Funcionários da empresa X</h1>
+    <?php
+    $counter = 0;
+    foreach($funcionarios as $funcionario)
+    {
+      if($funcionario == true)
+        $counter++;
+    }
+
+    echo "A empresa conta com $counter funcionários.";
+    
+    ?>
     <form action="">
         <input type="text" value="<?=isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>" placeholder="Buscar Funcionario" name="buscarFuncionario">
         <button>Buscar</button>
