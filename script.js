@@ -1,20 +1,14 @@
-function showModal(){
+function showModal() {
     document.querySelector(".modal-form").style.display = "flex";
+}
+
+function deletar(idFuncionario) {
+    let confirmacao = confirm("Deseja deletar o funcionario?");
+
+    if (confirmacao) {
+        window.location = "acaoDeletar.php?id=" + idFuncionario;
+    }
 }
 
 document.getElementById("btnAddFuncionario")
     .addEventListener("click", showModal);
-
-    function showModa(){
-        document.querySelector(".modal-form").style.display = "flex";
-    }
-    
-    document.getElementById("btnAtualizarFuncionario")
-        .addEventListener("click", showModa);
-
-        function showMod(){
-            document.querySelector(".modal-form").style.display = "flex";
-        }
-        
-        document.getElementById("btnDeletarFuncionario")
-            .addEventListener("click", showMod);

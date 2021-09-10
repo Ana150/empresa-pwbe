@@ -35,17 +35,12 @@ if (isset($_GET["buscarFuncionario"])) {
     <form action="">
         <input type="text" value="<?= isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>" placeholder="Buscar Funcionario" name="buscarFuncionario">
         <button>Buscar</button>
-        
+
     </form>
 
-    <div class="botoes">
-        <button id="btnAddFuncionario">Adicionar Funcionário</button>
-        <button id="btnAtualizarFuncionario">Atualizar Funcionário</button>
-        <button id="btndeletarFuncionario">Deletar Funcionário</button>
-    </div>
-    
-    <div class="modal-form">
+    <button id="btnAddFuncionario">Adicionar Funcionário</button>
 
+    <div class="modal-form">
         <form id="form-funcionario" action="acoes.php" method="POST">
             <h1>Adicionar Funcionário</h1>
             <input class="int" type="text" placeholder="Digite o ID" name="id">
@@ -59,6 +54,7 @@ if (isset($_GET["buscarFuncionario"])) {
             <button class="bt">Salvar</button>
         </form>
     </div>
+
     <table border="1">
         <tr>
             <th>ID</th>
@@ -69,6 +65,7 @@ if (isset($_GET["buscarFuncionario"])) {
             <th>IP Adress</th>
             <th>Country</th>
             <th>Department</th>
+            <th>Açoes</th>
         </tr>
         <?php
         foreach ($funcionarios as $funcionario) :
@@ -82,6 +79,10 @@ if (isset($_GET["buscarFuncionario"])) {
                 <td><?= $funcionario->ip_address ?></td>
                 <td><?= $funcionario->country ?></td>
                 <td><?= $funcionario->department ?></td>
+                <td>
+                    <button>Atualizar Funcionário</button>
+                    <button onclick="deletar(<?= $funcionario->id ?>)">Deletar Funcionário</button>
+                </td>
             </tr>
         <?php
         endforeach;
