@@ -28,7 +28,7 @@ function lerArquivo($nomeArquivo){
     
     }
 
-    function adicionarFuncionario($novoFuncionario){
+    function adicionarFuncionario($nomeArquivo, $novoFuncionario){
         $funcionarios = lerArquivo($nomeArquivo);
 
         $funcionarios[] = $novoFuncionario;

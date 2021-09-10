@@ -10008,5 +10008,15 @@
         "ip_address": "192.168.0.9",
         "country": "Brazil",
         "department": "TI"
+    },
+    {
+        "id": "42",
+        "first_name": "Ana",
+        "last_name": "Cristina",
+        "email": "anaoliveira4267@gmail.com",
+        "gender": "Feminino",
+        "ip_address": "457845215",
+        "country": "Brasil",
+        "department": "Marketing"
     }
 ]

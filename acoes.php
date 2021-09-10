@@ -2,7 +2,7 @@
 
 require("./funcoes.php");
 
-$NOVOfUNCIONARIO = [
+$novoFuncionario = [
     "id" => $_POST["id"],
     "first_name" => $_POST["first_name"],
     "last_name" => $_POST["last_name"],
@@ -11,7 +11,6 @@ $NOVOfUNCIONARIO = [
     "ip_address" => $_POST["ip_address"],
     "country" => $_POST["country"],
     "department" => $_POST["department"]
-    
 ];
 
 adicionarFuncionario("funcionarios.json", $novoFuncionario);

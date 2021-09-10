@@ -40,7 +40,6 @@ footer{
     margin-top: 20px;  
 }
 
-
 .modal-form{
     position: absolute;
     width: 100vw;
@@ -48,7 +47,7 @@ footer{
     background-color: #0009;
     top: 0;
     left: 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
   }
@@ -61,6 +60,10 @@ footer{
     border-radius: 4px;
     gap: 5px;
     
-    background-color: darkgray;
+    background-color: rgb(152, 100, 200);
     box-shadow: 0px 0px 20px #000;
+  }
+
+  .int{
+      width: 100%;
   }
