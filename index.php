@@ -80,7 +80,7 @@ if (isset($_GET["buscarFuncionario"])) {
                 <td><?= $funcionario->country ?></td>
                 <td><?= $funcionario->department ?></td>
                 <td>
-                    <button>Atualizar Funcionário</button>
+                    <button onclick="editar(<?= $funcionario->id?>)">Atualizar Funcionário</button>
                     <button onclick="deletar(<?= $funcionario->id ?>)">Deletar Funcionário</button>
                 </td>
             </tr>
